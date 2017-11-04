@@ -8,8 +8,11 @@ export PYSPARK_PYTHON=python3
 export PYSPARK_DRIVER_PYTHON="jupyter"
 export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
 
-# launch!
+## pyspark i local mode
 $SPARK_HOME/bin/pyspark
+
+## pyspark connect to cluster
+#$SPARK_HOME/bin/pyspark --master spark://localhost:7077  --executor-memory 4g --driver-memory 1g
 
 
 ## one liner
