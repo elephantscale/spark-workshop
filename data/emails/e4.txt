@@ -1,0 +1,11 @@
+From: "my name" <me@me.com>
+To: "your name" <you@you.com>
+Sent-From:  4.4.4.4
+Date: 2017-11-01T16:42:15-0500
+Subject: team meeting this afternoon @ 2pm
+
+Team,
+let's do a quick meeting today afternoon.
+Let's discuss the current project.
+
+see you then!

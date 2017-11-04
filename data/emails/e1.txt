@@ -1,0 +1,9 @@
+From: "my name" <me@me.com>
+To: "your name" <you@you.com>
+Sent-From:  1.1.1.1
+Date: 2017-11-01T16:42:15-0500
+Subject: Check this out!
+
+Hi,
+can you check this proposal and approve?
+thanks!
