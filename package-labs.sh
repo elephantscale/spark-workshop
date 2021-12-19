@@ -11,7 +11,7 @@ find . -name "*.html" -print0 | xargs -0 rm -f
 ## convert ipynb notebooks into HTML
 notebooks=$(find . -type f -name "*.ipynb" | grep -v ".ipynb_checkpoints" )
 
-jupyter nbconvert ${notebooks}
+jupyter nbconvert --to html ${notebooks}
 
 ## Change all the links from README.html
 sed 's/ipynb/html/g' < README.html > a.html

@@ -2,6 +2,8 @@ derby.log
 metastore_db
 *.zip
 *.log
+*.html
+*.data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

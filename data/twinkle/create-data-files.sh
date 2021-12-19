@@ -13,7 +13,7 @@ then
         echo -n "creating master data file..."
         cat sample.txt > a.data
         rm -f a1.data
-        for i in {1..24}
+        for i in {1..23}
         do
                 echo -n "$i..."
                 cat a.data   a.data >> a1.data
