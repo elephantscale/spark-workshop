@@ -81,4 +81,51 @@ f.count()
 Go to spark shell UI @ port 4040  
 **=> Inspect 'storage' tab**  
 
-## Step-8: Discuss Caching
+## Step-8: Caching SQL Tables
+
+Let's try caching tables
+
+```python
+
+house_sales = spark.read.\
+        option("header" ,"true").\
+        option("inferSchema", "true").\
+        csv("data/house-sales/house-sales-simplified.csv")
+
+house_sales.createOrReplaceTempView("house_sales")
+```
+
+```python
+# query before caching
+sql = """
+select Bedrooms, count(*) as total 
+from house_sales 
+group by Bedrooms 
+order by total desc
+"""
+
+spark.sql(sql).show()
+```
+
+Cache
+
+```python
+spark.sql("cache table house_sales");
+```
+
+Query after caching
+
+```python
+spark.sql(sql).show()
+```
+
+## Some Sample Code for Timing
+
+```python
+import time
+
+t1 = time.perf_counter()
+spark.sql(sql).show()
+t2 = time.perf_counter()
+print ("query took {:,.2f} ms ".format( (t2-t1)*1000))
+```
