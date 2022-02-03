@@ -14,7 +14,11 @@ $   ~/spark/bin/pyspark
 In PySpark:
 
 ```python
-f = spark.read.text("data/twinkle/sample.txt")
+data_location = 'data/twinkle/sample.txt'
+# data_location = 's3://elephantscale-public/data/text/twinkle/sample.txt'
+# data_location = 'https://elephantscale-public.s3.amazonaws.com/data/text/twinkle/sample.txt'
+
+f = spark.read.text(data_location)
 
 # display data
 f.show(10, False)  # upto 10 lines, do not truncate

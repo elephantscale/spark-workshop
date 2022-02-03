@@ -41,7 +41,13 @@ We are going to fill in the values here to understand how caching performs.
 Load a big file (e.g 500M.data)
 
 ```python
-f = spark.read.text("data/twinkle/500M.data")
+# data_location = 'data/twinkle/500M.data'
+data_location = 's3://elephantscale-public/data/text/twinkle/100M.data'
+# data_location = 'https://elephantscale-public.s3.amazonaws.com/data/text/twinkle/100M.data'
+
+f = spark.read.text(data_location)
+
+print(f)
 ```
 
 Do a count:
@@ -87,10 +93,14 @@ Let's try caching tables
 
 ```python
 
+data_location = "data/house-sales/house-sales-simplified.csv" 
+# data_location =  's3://elephantscale-public/data/house-prices/house-sales-simplified.csv'
+# data_locatiion = 'https://elephantscale-public.s3.amazonaws.com/data/house-prices/house-sales-simplified.csv'
+
 house_sales = spark.read.\
         option("header" ,"true").\
         option("inferSchema", "true").\
-        csv("data/house-sales/house-sales-simplified.csv")
+        csv(data_location)
 
 house_sales.createOrReplaceTempView("house_sales")
 ```

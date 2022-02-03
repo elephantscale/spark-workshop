@@ -31,10 +31,15 @@ $   ~/spark/bin/pyspark
 We are going let Spark figure out the schema also.
 
 ```python
+data_location = "data/house-sales/house-sales-simplified.csv" 
+# data_location =  's3://elephantscale-public/data/house-prices/house-sales-simplified.csv'
+# data_locatiion = 'https://elephantscale-public.s3.amazonaws.com/data/house-prices/house-sales-simplified.csv'
+
+
 sales = spark.read.\
         option("header" ,"true").\
         option("inferSchema", "true").\
-        csv("data/house-sales/house-sales-simplified.csv")
+        csv(data_location)
 
 sales.show()
 
