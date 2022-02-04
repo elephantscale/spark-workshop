@@ -95,7 +95,7 @@ Let's try caching tables
 
 data_location = "data/house-sales/house-sales-simplified.csv" 
 # data_location =  's3://elephantscale-public/data/house-prices/house-sales-simplified.csv'
-# data_locatiion = 'https://elephantscale-public.s3.amazonaws.com/data/house-prices/house-sales-simplified.csv'
+# data_location = 'https://elephantscale-public.s3.amazonaws.com/data/house-prices/house-sales-simplified.csv'
 
 house_sales = spark.read.\
         option("header" ,"true").\
